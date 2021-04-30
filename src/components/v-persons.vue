@@ -55,15 +55,87 @@
       />
     </div>
 
-    <div class="v-persons__cards">
-      <Person
-        v-for="item of paginatedPersons"
-        :key="item.id"
-        :itemPerson="item"
-        @saveIdForRemove="saveIdForRemove"
-        @saveSelectedContact="saveContactForUpdate"
-      />
+    <div class="v-persons__container">
+      <div class="v-persons__filter">
+        <label for="">Фильтрация:</label>
+        <div class="filter__gender">
+          <label for="">По полу:</label>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input
+                type="radio"
+                name="options"
+                id="option1"
+                v-model="gender"
+                value="Мужской"
+              />
+              Мужской
+            </label>
+            <label class="btn btn-secondary">
+              <input
+                type="radio"
+                name="options"
+                id="option2"
+                v-model="gender"
+                value="Женский"
+              />
+              Женский
+            </label>
+          </div>
+        </div>
+        <div class="filter__age">
+          <label for="">По возрасту:</label>
+          <div class="age_input_controls">
+            <input
+              type="text"
+              class="style_input"
+              placeholder="от"
+              v-model="age_from"
+            />
+            <input
+              type="text"
+              class="style_input"
+              placeholder="до"
+              v-model="age_to"
+            />
+          </div>
+        </div>
+        <div class="filter__date">
+          <label for="">По дате рождения:</label>
+          <div class="date_input_controls">
+            <input type="date" placeholder="от" v-model="date_from" />
+            <input type="date" placeholder="до" v-model="date_to" />
+          </div>
+        </div>
+        <div class="filter__btn-controls">
+          <button
+            class="btn btn-info apply_cancel_style"
+            @click="clickApplyFilter"
+          >
+            Применить
+          </button>
+          <button
+            class="btn btn-danger apply_cancel_style"
+            @click="clickCancelFilter"
+          >
+            Сбросить
+          </button>
+        </div>
+      </div>
+      <div class="v-persons__no-cards" v-if="!persons.length">
+        <span class="no-find-data">Ничего не найдено!!!</span>
+      </div>
+      <div class="v-persons__cards" v-if="persons.length">
+        <Person
+          v-for="item of paginatedPersons"
+          :key="item.id"
+          :itemPerson="item"
+          @saveIdForRemove="saveIdForRemove"
+          @saveSelectedContact="saveContactForUpdate"
+        />
+      </div>
     </div>
+
     <Modal
       v-if="showModalRemove"
       :title="modalTitle"
@@ -99,6 +171,12 @@ export default {
       selectedIdForRemove: "", // Выбранный Id для удаления
       personAmoutFromPage: 5, // Количество person на странице
       pageNumber: 1, // Текущая страница
+      //////// Фильтрация
+      gender: "",
+      age_from: "",
+      age_to: "",
+      date_from: "",
+      date_to: "",
     };
   },
   computed: {
@@ -198,6 +276,32 @@ export default {
     sortByGender() {
       this.persons.sort((a, b) => (a.gender < b.gender ? -1 : 0));
     },
+    clickApplyFilter() {
+      if (this.age_from !== "" && this.age_to !== "") {
+        this.persons = this.persons.filter(
+          (item) => item.age > this.age_from && item.age < this.age_to
+        );
+      }
+      if (this.date_from !== "" && this.date_to !== "") {
+        this.persons = this.persons.filter(
+          (item) =>
+            item.date_born > this.date_from && item.date_born < this.date_to
+        );
+      }
+      if (this.gender) {
+        this.persons = this.persons.filter(
+          (item) => item.gender === this.gender
+        );
+      }
+    },
+    clickCancelFilter() {
+      this.gender = "";
+      this.age_from = "";
+      this.age_to = "";
+      this.date_from = "";
+      this.date_to = "";
+      this.getPersonsDataFromApi();
+    },
   },
 };
 </script>
@@ -208,12 +312,52 @@ export default {
   display: flex;
   justify-content: center;
 }
+.v-persons__container {
+  display: flex;
+  justify-content: space-between;
+}
+.v-persons__filter {
+  width: 200px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+  padding-right: 5px;
+}
+
+.age_input_controls {
+  display: flex;
+  justify-content: space-evenly;
+}
+.date_input_controls {
+  text-align: center;
+}
+.style_input {
+  width: 70px;
+}
+.filter__btn-controls {
+  display: flex;
+}
+.apply_cancel_style {
+  margin-top: 10px;
+  width: 100px;
+}
 .v-persons__addNewPerson {
   margin-right: 10px;
 }
 .v-persons__cards {
-  margin-top: 20px;
+  border-top: 1px solid gray;
+  margin-top: 5px;
   padding: 3px;
+}
+.v-persons__no-cards {
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.no-find-data {
+  color: red;
+  font-weight: bold;
 }
 .v-persons__pagination {
   display: flex;
