@@ -1,0 +1,114 @@
+ {
+     "persons": [
+        {
+            "id": 1,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/boks-lyudi-muzhchiny-sport-7276.jpg",
+            "surnameNp": "Майк Тайсон",
+            "age": 45,
+            "gender": "Мужской",
+            "date_born": "1960-02-22",
+            "habitation": "США"
+        },
+        {
+            "id": 2,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/aktery-artisty-devushki-dzhennifer_lopes_jennifer_lopez-kino-lyudi-muzyka-9448.jpg",
+            "surnameNp": "Дженнифер Лопес",
+            "age": 34,
+            "gender": "Женский",
+            "date_born": "1980-02-12",
+            "habitation": "США"
+        },
+        {
+            "id": 3,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/art-lyudi-rnesto_e_evara-16465.jpg",
+            "surnameNp": "Эрнесто Че Гевара",
+            "age": 38,
+            "gender": "Мужской",
+            "date_born": "1951-03-22",
+            "habitation": "Куба"
+        },
+        {
+            "id": 4,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/igry-lyudi-muzhchiny-44311.jpg",
+            "surnameNp": "Assassins creed",
+            "age": 36,
+            "gender": "Мужской",
+            "date_born": "1960-03-31",
+            "habitation": "Game persons"
+        },
+        {
+            "id": 5,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/aktery-lyudi-muzhchiny-zhejson_tethem_jason_statham-25934.jpg",
+            "surnameNp": "Джейсон Стэтхэм",
+            "age": 49,
+            "gender": "Мужской",
+            "date_born": "1990-02-15",
+            "habitation": "США"
+        },
+        {
+            "id": 6,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/aktery-dzhoker_joker-kino-lyudi-muzhchiny-30881.jpg",
+            "surnameNp": "Джокер",
+            "age": 48,
+            "gender": "Мужской",
+            "date_born": "1980-02-15",
+            "habitation": "США"
+        },
+        {
+            "id": 7,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/futbol-ionel_ndres_essi_lionel_andres_messi-lyudi-muzhchiny-sport-18332.jpg",
+            "surnameNp": "Лионель Андрес Месси",
+            "age": 35,
+            "gender": "Мужской",
+            "date_born": "1960-02-10",
+            "habitation": "Italy"
+        },
+        {
+            "id": 8,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/kino-lyudi-risunki-42405.jpg",
+            "surnameNp": "Брюс Ли",
+            "age": 50,
+            "gender": "Мужской",
+            "date_born": "1960-06-01",
+            "habitation": "США"
+        },
+        {
+            "id": 9,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/aktery-devushki-kino-lyudi-skarlet_johansson_scarlett_johansson-zheleznyj_elovek_iron_man-9363.jpg",
+            "surnameNp": "Скарлет Йоханссон",
+            "age": 40,
+            "gender": "Женский",
+            "date_born": "1980-02-15",
+            "habitation": "США"
+        },
+        {
+            "id": 10,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/futbol-lyudi-rishtianu_onaldu_cristiano_ronaldo-sport-22063.jpg",
+            "surnameNp": "Кристиано Рональдо",
+            "age": 44,
+            "gender": "Мужской",
+            "date_born": "1982-02-09",
+            "habitation": "Italy"
+        },
+        {
+            "id": 11,
+            "img":
+                "https://mobimg.b-cdn.net/pic/v2/gallery/real/aktery-dzhonni_depp_johnny_depp-kino-lyudi-muzhchiny-piraty_karibskogo_morya_pirates_of_the_caribbean-19777.jpg",
+            "surnameNp": "Джонни Депп",
+            "age": 52,
+            "gender": "Мужской",
+            "date_born": "1970-02-22",
+            "habitation": "США"
+        }
+    ]
+ }
