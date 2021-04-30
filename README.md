@@ -1,4 +1,13 @@
 # app
+Перед запуском необходимо установить npm пакет json-server
+```
+npm install -g json-server
+```
+После установки запустить (Так как данные загружаются через сервак)
+```
+json-server --watch data_persons.json
+```
+
 
 ## Project setup
 ```
